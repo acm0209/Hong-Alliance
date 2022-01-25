@@ -11,9 +11,9 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="store : ${store}">
-                <td th:text="${store.sid}"></td>
-                <td th:text="${store.sname}"></td>
+            <tr th:each="list : ${lists}">
+                <td th:text="${list.name}"></td>
+                <td th:text="${list.kind}"></td>
             </tr>
             </tbody>
         </table>

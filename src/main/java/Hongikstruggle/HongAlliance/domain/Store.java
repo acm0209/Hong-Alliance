@@ -9,7 +9,7 @@ public class Store {
     public Integer getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(Integer sid) {
         this.id = id;
     }
 
