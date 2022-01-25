@@ -5,6 +5,8 @@ import Hongikstruggle.HongAlliance.repository.JdbcConnection;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -30,10 +32,13 @@ public class StoreController {
         return "stores";
     }
 
-    @GetMapping("/stores/cafe")
-    public String storesCafe(Model model){
+    @GetMapping("/stores/{event}")
+    public String storesCafe(@PathVariable String event, Model model){
 
-        List<Store> lists = JdbcConnection.findByEvent("cafe");
+        //System.out.println(event);
+
+
+        List<Store> lists = JdbcConnection.findByEvent(event);
 
         model.addAttribute("lists", lists);
 
