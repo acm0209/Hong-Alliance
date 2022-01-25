@@ -1,6 +1,6 @@
 package Hongikstruggle.HongAlliance.domain;
 
-public class Member {
+public class Store {
 
     private Integer id;
     private String name;
@@ -26,6 +26,5 @@ public class Member {
     public void setKind(String kind) {
         this.kind = kind;
     }
-
 
 }
