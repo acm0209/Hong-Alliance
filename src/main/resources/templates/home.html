@@ -5,41 +5,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <title>Hong Alliance</title>
 </head>
 
 <body>
+<div class = "box level is-mobile">
 
-<div>
-    <h1>홍익대학교 제휴목록 </h1>
-    <a href="/members/login">로그인</a>
+    <span class="level-item has-text-centered">
+        <span class="title is-2"> 홍익대 제휴목록 </span>
+    </span>
+    <span class="button level-right"> <a href="/members/login">로그인</a> </span>
+
 </div>
 
-<div class="container">
-    <div>
-
+<div class="level is-mobile box">
+    <div class="level-item has-text-centered">
+        <div>
+            <a href="/stores">
+                <span>전체보기</span>
+                <figure class="image is-64x64">
+                    <img class ="is-rounded" th:src ="@{/images/all.jpg}">
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="level-item has-text-centered">
         <div>
             <a href="/admin">
-                <span>관리자 모드</span>
-                <figure class="image is-128x128">
-                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
-                </figure></a>
+                <span>즐겨찾기</span>
+                <figure class="image is-64x64">
+                    <img class ="is-rounded" th:src ="@{/images/favorite.png}">
+                </figure>
+            </a>
         </div>
-
-            <a href="/stores">전체보기</a>
-            <a href="/stores/favorites">나의 즐겨찾기</a>
-            <a href="/stores/graduate">졸업생 가게</a>
-            <a href="/stores/software">소프트웨어/강의</a>
-            <a href="/stores/cafe">카페/디저트</a>
-            <a href="/stores/dining">식당</a>
-            <a href="/stores/hospital">병원</a>
-            <a href="/stores/theater">영화관</a>
-            <a href="/stores/hair-shop">헤어숍</a>
-            <a href="/stores/etc">기타</a>
-            <a href="join-store">입점신청</a>
-
     </div>
-</div> <!-- /container -->
+    <div class="level-item has-text-centered">
+        <div>
+            <a href="/admin">
+                <span>식당</span>
+                <figure class="image is-64x64">
+                    <img class ="is-rounded" th:src ="@{/images/restaurant.jpg}">
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="level-item has-text-centered">
+        <div>
+            <a href="/stores/cafe">
+                <span>카페/디저트</span>
+                <figure class="image is-64x64">
+                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
+                </figure>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="level is-mobile box">
+    <div class="level-item has-text-centered">
+        <div>
+            <a href="/admin">
+                <span>헤어숍</span>
+                <figure class="image is-64x64">
+                    <img class ="is-rounded" th:src ="@{/images/hair.jpg}">
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="level-item has-text-centered">
+        <div>
+            <a href="/admin">
+                <span>병원</span>
+                <figure class="image is-64x64">
+                    <img class ="is-rounded" th:src ="@{/images/hospital.png}">
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="level-item has-text-centered">
+        <div>
+            <a href="/admin">
+                <span>플랫폼</span>
+                <figure class="image is-64x64">
+                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="level-item has-text-centered">
+        <div>
+            <a href="/admin">
+                <span>기타</span>
+                <figure class="image is-64x64">
+                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
+                </figure>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="level is-mobile box">
+    <div class="level-item has-text-centered">
+        <div>
+            <a href="/admin">
+                <span>업체 추가 요청 폼</span>
+                <figure class="image is-64x64">
+                    <img class ="is-rounded" th:src ="@{/images/tool.jpg}">
+                </figure>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>홍익대학교 제휴목록 정리 프로젝트</p>
+        <p>문의 : acm0209@naver.com</p>
+    </div>
+</footer>
+
 
 </body>
 </html>
