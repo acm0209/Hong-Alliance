@@ -1,11 +1,10 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
     <title>Hong Alliance</title>
 </head>
 
@@ -16,7 +15,6 @@
         <span class="title is-2"> 홍익대 제휴목록 </span>
     </span>
     <span class="button level-right"> <a href="/members/login">로그인</a> </span>
-
 </div>
 
 <div class="level is-mobile box">
@@ -24,7 +22,7 @@
         <div>
             <a href="/stores">
                 <span>전체보기</span>
-                <figure class="image is-64x64">
+                <figure class="image is-96x96">
                     <img class ="is-rounded" th:src ="@{/images/all.jpg}">
                 </figure>
             </a>
@@ -34,7 +32,7 @@
         <div>
             <a href="/admin">
                 <span>즐겨찾기</span>
-                <figure class="image is-64x64">
+                <figure class="image is-96x96">
                     <img class ="is-rounded" th:src ="@{/images/favorite.png}">
                 </figure>
             </a>
@@ -44,31 +42,32 @@
         <div>
             <a href="/admin">
                 <span>식당</span>
-                <figure class="image is-64x64">
+                <figure class="image is-96x96">
                     <img class ="is-rounded" th:src ="@{/images/restaurant.jpg}">
                 </figure>
             </a>
         </div>
     </div>
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/stores/cafe">
-                <span>카페/디저트</span>
-                <figure class="image is-64x64">
-                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
-                </figure>
-            </a>
-        </div>
-    </div>
+
 </div>
 
 
 <div class="level is-mobile box">
     <div class="level-item has-text-centered">
         <div>
+            <a href="/stores/cafe">
+                <span>카페/디저트</span>
+                <figure class="image is-96x96">
+                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="level-item has-text-centered">
+        <div>
             <a href="/admin">
                 <span>헤어숍</span>
-                <figure class="image is-64x64">
+                <figure class="image is-96x96">
                     <img class ="is-rounded" th:src ="@{/images/hair.jpg}">
                 </figure>
             </a>
@@ -78,28 +77,8 @@
         <div>
             <a href="/admin">
                 <span>병원</span>
-                <figure class="image is-64x64">
+                <figure class="image is-96x96">
                     <img class ="is-rounded" th:src ="@{/images/hospital.png}">
-                </figure>
-            </a>
-        </div>
-    </div>
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/admin">
-                <span>플랫폼</span>
-                <figure class="image is-64x64">
-                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
-                </figure>
-            </a>
-        </div>
-    </div>
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/admin">
-                <span>기타</span>
-                <figure class="image is-64x64">
-                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
                 </figure>
             </a>
         </div>
@@ -110,16 +89,34 @@
     <div class="level-item has-text-centered">
         <div>
             <a href="/admin">
+                <span>플랫폼</span>
+                <figure class="image is-96x96">
+                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="level-item has-text-centered">
+        <div>
+            <a href="/admin">
+                <span>기타</span>
+                <figure class="image is-96x96">
+                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="level-item has-text-centered">
+        <div>
+            <a href="/admin">
                 <span>업체 추가 요청 폼</span>
-                <figure class="image is-64x64">
+                <figure class="image is-96x96">
                     <img class ="is-rounded" th:src ="@{/images/tool.jpg}">
                 </figure>
             </a>
         </div>
     </div>
 </div>
-
-
 
 <footer class="footer">
     <div class="content has-text-centered">

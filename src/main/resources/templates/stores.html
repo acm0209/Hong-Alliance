@@ -1,21 +1,32 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hong Alliance 전체보기</title>
+</head>
+
 <body>
 <div class="container">
     <div>
-        <table>
+        <table class="table">
+
             <thead>
             <tr>
-                <th>#</th>
                 <th>이름</th>
+                <th>종류</th>
             </tr>
             </thead>
+
             <tbody>
             <tr th:each="list : ${lists}">
                 <td th:text="${list.name}"></td>
                 <td th:text="${list.kind}"></td>
             </tr>
             </tbody>
+
         </table>
     </div>
 </div> <!-- /container -->

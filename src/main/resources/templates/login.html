@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hong Alliance</title>
+</head>
+
+<body>
+
+<div class = "box level is-mobile">
+
+    <span class="level-item has-text-centered">
+        <span class="title is-2"> 홍익대 제휴목록 </span>
+    </span>
+    <span class="button level-right"> <a href="/members/login">로그인</a> </span>
+</div>
+
+<div class="box is-mobile">
+
+    <div class="field">
+        <input class="input " type="email" placeholder="이메일 아이디">
+    </div>
+    <div class="field">
+        <input class="input " type="password" placeholder="비밀번호">
+    </div>
+
+    <button class="button is-fullwidth field">로그인</button>
+
+    <div>
+        <p class="buttons filed is-justify-content-space-around">
+            <button class="button is-success">네이버로 로그인</button>
+            <button class="button is-warning">카카오로 로그인</button>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
