@@ -2,21 +2,38 @@ package Hongikstruggle.HongAlliance.repository;
 
 import Hongikstruggle.HongAlliance.domain.Store;
 import com.mysql.cj.protocol.Resultset;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class JdbcConnection {
 
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "jhwwjd9*";
-    private static final String URL = "jdbc:mysql://localhost:3306/hong_alliance_db";
+    private static String USERNAME;
+    private static String PASSWORD;
+    private static String URL;
+    private static String DRIVER;
+
+    @Value("${db.username}")
+    public void setUSERNAME(String username) { USERNAME = username; }
+
+    @Value("${db.password}")
+    public void setPASSWORD(String password) { PASSWORD = password; }
+
+    @Value("${db.url}")
+    public void setURL(String url) { URL = url; }
+
+    @Value("${db.driver-class-name}")
+    public void setDRIVER(String driver) { DRIVER = driver; }
 
 
     public static Connection getConnection(){
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(DRIVER);
             System.out.println("정상적으로 db에 연결되었습니다.");
             return DriverManager.getConnection(URL,USERNAME,PASSWORD);
         } catch (Exception e) {
@@ -25,6 +42,8 @@ public class JdbcConnection {
         }
         return null;
     }
+
+
 
     public static List<Store> findAll(){
 
@@ -71,6 +90,7 @@ public class JdbcConnection {
         }
         return list;
     }
+
 
 
 
