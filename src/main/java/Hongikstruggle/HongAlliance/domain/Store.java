@@ -1,10 +1,28 @@
 package Hongikstruggle.HongAlliance.domain;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Store {
+
+    private static String CLIENTID;
+
+    @Value("${ncloud.map.client-id}")
+    public void setCLIENTID(String clientid) {
+        CLIENTID = clientid;
+    }
+
+    public static String getCLIENTID(){
+        return CLIENTID;
+    }
 
     private Integer id;
     private String name;
     private String kind;
+    private double lat;
+    private double lon;
+
 
     public Integer getId() {
         return id;
@@ -27,4 +45,19 @@ public class Store {
         this.kind = kind;
     }
 
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
+    }
 }

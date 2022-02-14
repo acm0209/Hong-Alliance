@@ -19,10 +19,7 @@ import static Hongikstruggle.HongAlliance.repository.JdbcConnection.getConnectio
 @Controller
 public class StoreController {
 
-
     //show list 로 통일하고, 인자만 바꿔주는 형식으로 해서 홈페이지를 구성해 보자.
-
-
 
     @GetMapping("/stores")
     public String stores(Model model){
