@@ -21,13 +21,21 @@ public class Store {
     private String name;
     private String kind;
     private double lat;
-    private double lon;
+    private double lng;
+    private String info; //할인 정보
 
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
 
     public Integer getId() {
         return id;
     }
-    public void setId(Integer sid) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -54,10 +62,10 @@ public class Store {
     }
 
     public double getLon() {
-        return lon;
+        return lng;
     }
 
-    public void setLon(double lon) {
-        this.lon = lon;
+    public void setLon(double lng) {
+        this.lng = lng;
     }
 }

@@ -6,7 +6,7 @@ public class User {
     private String name;
     private String email;
     private String password;
-    // private boolean admin;
+    // private boolean admin;, 좋아요 한 것들의 id를 저장하는 값도 필요
 
     public Long getId() {
         return id;

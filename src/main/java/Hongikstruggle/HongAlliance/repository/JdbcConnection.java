@@ -91,8 +91,32 @@ public class JdbcConnection {
         return list;
     }
 
+    public static Store findById(String id){
+        String sql = "select * from store where sid =" + id + ";";
 
+        System.out.println(sql);
+        Store store = new Store();
 
+        try{
+            Statement stmt = getConnection().createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            rs.next();
 
+            store.setId(rs.getInt("sid"));
+            store.setName(rs.getString("sname"));
+            store.setKind(rs.getString("kind"));
+        }catch(Exception e){
+            System.out.println("selection 오류 발생!");
+            System.out.println(e);
+        }
+        return store;
+
+    }
+
+    public void PostNewStore(String sname, String info){
+        String sql = "insert into newstore(sname,info) values(" + sname + "," + info + ");";
+
+        System.out.println(sql);
+    }
 
 }

@@ -46,6 +46,19 @@ public class StoreController {
 
         return "stores";
     }
+    @GetMapping("/{id}")
+    public String findid(@PathVariable String id, Model model){
+
+        System.out.println(id);
+
+        Store store = JdbcConnection.findById(id);
+
+        model.addAttribute("lists", store);
+
+
+        return "stores";
+    }
+
 
 
 
