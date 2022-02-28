@@ -30,5 +30,4 @@ public class HomeController {
         return "naver_map";
     }
 
-
 }

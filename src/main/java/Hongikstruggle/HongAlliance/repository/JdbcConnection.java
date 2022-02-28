@@ -3,9 +3,9 @@ package Hongikstruggle.HongAlliance.repository;
 import Hongikstruggle.HongAlliance.domain.Store;
 import com.mysql.cj.protocol.Resultset;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+import java.sql.Connection;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -113,10 +113,54 @@ public class JdbcConnection {
 
     }
 
-    public void PostNewStore(String sname, String info){
-        String sql = "insert into newstore(sname,info) values(" + sname + "," + info + ");";
+    public static void PostNewStore(Store form){
 
+        String newid = JdbcConnection.Getmaxnewid();
+
+        String sql = "insert into newstore(newid, sname,info,kind) values(" + newid + ",'" + form.getName() + "','" + form.getInfo() + "','" + form.getKind() +"');";
+        try{
+            Statement stmt = getConnection().createStatement();
+            stmt.execute(sql);
+        }catch(Exception e){
+            System.out.println(e);
+        }
         System.out.println(sql);
+    }
+
+    public static String Getmaxnewid(){
+        Integer max_id = null;
+
+        String sql = "select max(newid) from newstore";
+
+        try{
+            Statement stmt = getConnection().createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            rs.next();
+            max_id = rs.getInt("max(newid)")+1;
+        }catch(Exception e){
+            System.out.println("selection 오류 발생!");
+            System.out.println(e);
+        }
+
+        return Integer.toString(max_id);
+    }
+
+    public static String Getmaxid(){
+        Integer max_id = null;
+
+        String sql = "select max(id) from store";
+
+        try{
+            Statement stmt = getConnection().createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            rs.next();
+            max_id = rs.getInt("max(id)")+1;
+        }catch(Exception e){
+            System.out.println("selection 오류 발생!");
+            System.out.println(e);
+        }
+
+        return Integer.toString(max_id);
     }
 
 }

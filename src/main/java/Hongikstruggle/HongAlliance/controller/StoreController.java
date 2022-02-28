@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
+import java.util.Objects;
 
 import static Hongikstruggle.HongAlliance.repository.JdbcConnection.getConnection;
 
@@ -39,6 +40,7 @@ public class StoreController {
         System.out.println(event);
 
 
+
         List<Store> lists = JdbcConnection.findByEvent(event);
 
         model.addAttribute("lists", lists);
@@ -46,8 +48,12 @@ public class StoreController {
 
         return "stores";
     }
+    /*
     @GetMapping("/{id}")
     public String findid(@PathVariable String id, Model model){
+
+
+
 
         System.out.println(id);
 
@@ -58,6 +64,8 @@ public class StoreController {
 
         return "stores";
     }
+
+     */
 
 
 

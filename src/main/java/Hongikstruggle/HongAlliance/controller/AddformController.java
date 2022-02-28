@@ -23,12 +23,12 @@ public class AddformController {
     @PostMapping("/addform")
     public String postform(Store form){
 
-        System.out.println(form.getName());
-        System.out.println(form.getKind());
-        System.out.println(form.getInfo());
+        JdbcConnection.PostNewStore(form);
 
         return "/addform";
     }
+
+
 
 
 }
