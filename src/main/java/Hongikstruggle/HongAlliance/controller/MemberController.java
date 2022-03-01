@@ -22,9 +22,10 @@ public class MemberController {
         return "home";
     }
 
-    @ResponseBody
+
     @GetMapping("/test")
     public String test(@RequestParam String code){
+
         System.out.println(code);
         MemberService memberService = new MemberService();
         String token = memberService.getKakaoAccessToken(code);
