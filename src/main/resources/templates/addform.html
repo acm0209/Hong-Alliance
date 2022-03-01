@@ -32,7 +32,7 @@
 
         /*그리드 */
         #grid{
-          border:4px solid Midnightblue;
+          border-bottom:0px solid Midnightblue;
           display:grid;
           grid-template-colums: 150px 1fr;
 
@@ -104,43 +104,42 @@
 <body>
   <header>
     <div class="links">
-      <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="kakao_login_medium.png"></a>
+      <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="/images/kakao_login_medium.png"></a>
 
     </div>
-    <a href="home.html"><p class="sdms-font"><strong>홍제휴</a>
+    <a href="/"><p class="sdms-font"><strong>홍제휴</a>
 
 
   </header>
 
-  <br>
   <main>
     <div id="grid">
-      <form class="box">
+      <form action="/addform" method="post" class="box">
         <div class="field">
           <label class="label">업체이름</label>
           <div class="control">
-            <input class="input" type="email" placeholder="">
+            <input class="input" type="text" name="name" placeholder="">
           </div>
         </div>
 
         <div class="field">
-          <label class="label">가게이름</label>
+          <label class="label">종류</label>
           <div class="control">
-            <input class="input" type="password" placeholder="">
+            <input class="input" type="text" name="kind" placeholder="">
           </div>
         </div>
 
         <div class="field">
           <label class="label">제휴내용</label>
           <div class="control">
-            <input class="input" type="email" placeholder="e.g. 홍대생 인증시 15% 할인">
+            <input class="input" name = "info" type="text" placeholder="e.g. 홍대생 인증시 15% 할인">
           </div>
         </div>
 
         <div class="field">
           <label class="label">위치</label>
           <div class="control">
-            <input class="input" type="email" placeholder="대략적인 위치">
+            <input class="input" name="position" type="text" placeholder="대략적인 위치">
           </div>
         </div>
         <button class="button is-dark">제출</button>

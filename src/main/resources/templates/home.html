@@ -32,7 +32,7 @@
 
         /*그리드 */
         #grid{
-          border:4px solid Midnightblue;
+          border-bottom:0px solid Midnightblue;
           display:grid;
           grid-template-colums: 150px 1fr;
 
@@ -71,9 +71,7 @@
           text-decoration: none; /* 기본 밑줄을 제거합니다 */
           color: #888;
         }
-        a:hover {
-          text-decoration: underline; /* 마우스 커서가 올라갔을 때 밑줄을 생성합니다*/
-        }
+
         header {
           margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
           height: 80px;
@@ -109,11 +107,10 @@
       <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="images/kakao_login_medium.png"></a>
 
     </div>
-    <a href="home.html"><p class="sdms-font"><strong>홍제휴</a>
+    <a href="/" style="color:white;"><p class="sdms-font"><strong>홍제휴</a>
 
 
   </header>
-  <br>
   <main>
     <div id="grid">
       <div class="level is-mobile box">
@@ -188,7 +185,7 @@
           <div class="level-item has-text-centered">
               <div>
                   <a href="/stores/platform">
-                      <span>플랫폼</span>
+                      <span>플랫폼/학원</span>
                       <figure class="image is-96x96">
                           <img class ="is-squre" th:src ="@{/images/home/handshake.png}">
                       </figure>

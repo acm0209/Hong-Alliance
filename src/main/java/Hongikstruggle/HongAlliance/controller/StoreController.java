@@ -37,9 +37,6 @@ public class StoreController {
     @GetMapping("/stores/{event}")
     public String storesCafe(@PathVariable String event, Model model){
 
-        System.out.println(event);
-
-
 
         List<Store> lists = JdbcConnection.findByEvent(event);
 
@@ -48,26 +45,6 @@ public class StoreController {
 
         return "stores";
     }
-    /*
-    @GetMapping("/{id}")
-    public String findid(@PathVariable String id, Model model){
-
-
-
-
-        System.out.println(id);
-
-        Store store = JdbcConnection.findById(id);
-
-        model.addAttribute("lists", store);
-
-
-        return "stores";
-    }
-
-     */
-
-
 
 
 

@@ -1,6 +1,7 @@
 package Hongikstruggle.HongAlliance.controller;
 
 import Hongikstruggle.HongAlliance.domain.Store;
+import Hongikstruggle.HongAlliance.domain.StoreForm;
 import Hongikstruggle.HongAlliance.repository.JdbcConnection;
 import com.mysql.cj.protocol.Resultset;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ public class AddformController {
     public String addform(){return "addform";}
 
     @PostMapping("/addform")
-    public String postform(Store form){
+    public String postform(StoreForm form){
 
         JdbcConnection.PostNewStore(form);
 

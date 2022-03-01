@@ -39,6 +39,7 @@
         }
         li{
           border-top: 2px solid gray;
+          list-style:none;
         }
 
 
@@ -115,35 +116,20 @@
   </header>
 
   <main>
-    <div style="margin-left:30px;font-size=12px;padding:15px;">등록</div>
 
 
     <div id="grid">
-        <ul>
-          <li>
-            <img src="a.jpg" alt="image" width="160" height="120">
-            <p style="margin-left: 10px;">양지메가1
-            </p>별점<br>   <a href="/">메뉴</a><br>   <a href="/">지도</a><br>
-          </li>
-          <br>
+        <li tr th:each="list : ${lists}">
+            <img src="/" alt="image" width="96" height="96">
+            <br>
+            <div style="margin-left: 10px;"><td th:text="${list.name}"></td></div>
+            <div style="margin-left: 10px;"><td th:text="${list.kind}"></td></div>
+            <div style="margin-left: 10px;"><td th:text="${list.info}"></td></div>
+        </li>
 
-          <li>
-            <img src="a.jpg" alt="image" width="160" height="120">
-            <p style="margin-left: 10px;">양지메가2
-            </p>별점<br>   <a href="/">메뉴</a><br>   <a href="/">지도</a><br>
-          </li>
-          <br>
-
-          <li>
-            <img src="a.jpg" alt="image" width="160" height="120">
-            <p style="margin-left: 10px;">양지메가3
-            </p>별점<br>   <a href="/">메뉴</a><br>   <a href="/">지도</a><br>
-          </li>
-          <br>
-
-        </ul>
 
     </div>
+
 
 
   </main>

@@ -1,6 +1,7 @@
 package Hongikstruggle.HongAlliance.repository;
 
 import Hongikstruggle.HongAlliance.domain.Store;
+import Hongikstruggle.HongAlliance.domain.StoreForm;
 import com.mysql.cj.protocol.Resultset;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -59,6 +60,7 @@ public class JdbcConnection {
                 store.setId(rs.getInt("sid"));
                 store.setName(rs.getString("sname"));
                 store.setKind(rs.getString("kind"));
+                store.setInfo(rs.getString("info"));
                 list.add(store);
             }
             System.out.println("selection 정상 작동!");
@@ -113,11 +115,11 @@ public class JdbcConnection {
 
     }
 
-    public static void PostNewStore(Store form){
+    public static void PostNewStore(StoreForm form){
 
         String newid = JdbcConnection.Getmaxnewid();
 
-        String sql = "insert into newstore(newid, sname,info,kind) values(" + newid + ",'" + form.getName() + "','" + form.getInfo() + "','" + form.getKind() +"');";
+        String sql = "insert into newstore(newid, sname,info,kind,position) values(" + newid + ",'" + form.getName() + "','" + form.getInfo() + "','" + form.getKind() +"','" +form.getPosition() + "');";
         try{
             Statement stmt = getConnection().createStatement();
             stmt.execute(sql);

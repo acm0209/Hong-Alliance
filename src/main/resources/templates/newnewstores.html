@@ -13,19 +13,13 @@
     <div>
         <table class="table">
 
-            <thead>
-            <tr>
-                <th>이름</th>
-                <th>종류</th>
-            </tr>
-            </thead>
 
-            <tbody>
+
             <tr th:each="list : ${lists}">
                 <td th:text="${list.name}"></td>
                 <td th:text="${list.kind}"></td>
+                <td th:text="${list.info}"></td>
             </tr>
-            </tbody>
 
         </table>
     </div>
