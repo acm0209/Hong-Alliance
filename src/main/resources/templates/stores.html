@@ -4,31 +4,161 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hong Alliance 전체보기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+    <title>Hong Alliance stores</title>
+    <style>
+
+      /* 폰트적용 */
+        @font-face{
+          font-family:'SDMiSaeng';/*미생체*/
+          src:local("SDMiSaeng"),
+          url('SDMiSaeng.eot'),
+          url('SDMiSaeng.woff') format('woff'),
+          url('SDMiSaeng.ttf') format('truetype');
+        }
+
+        .sdms-font{
+          font-family: 'SDMiSaeng',sans-serif;
+          color: 	#FFFFFF;
+          margin-left: 60px;
+          font-size:50px
+        }
+        p{
+          font-size:30px
+        }
+        .footerfont{
+          font-size:10px
+        }
+
+        /*그리드 */
+        #grid{
+          border:4px solid Midnightblue;
+          display:grid;
+          grid-template-colums: 150px 1fr;
+
+        }
+        li{
+          border-top: 2px solid gray;
+        }
+
+
+
+
+        img{ float: left;}
+
+          .p2{ clear: both;}
+
+          /* float된 이미지와 요소의 마진을 주고 싶으면 */
+          /* float된 이미지에 margin을 적용 */
+          img{ margin: 10px;}
+
+
+
+
+
+
+
+
+
+        * {
+          box-sizing: border-box; /* 길이 계산을 편하게 하기위함. box-sizing에 관한 설명은 아래 링크를 참고해주세요 */
+        }
+        body {
+          margin: 0; /* body의 기본마진을 없애줍니다(선택사항) */
+          font-family: sans-serif;
+        }
+        a {
+          text-decoration: none; /* 기본 밑줄을 제거합니다 */
+          color: #888;
+        }
+        a:hover {
+          text-decoration: underline; /* 마우스 커서가 올라갔을 때 밑줄을 생성합니다*/
+        }
+        header {
+          margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
+          height: 80px;
+          display: flex;
+          background: Midnightblue;
+          align-items: center; /* 하위 요소들 수직 가운데정렬 */
+          position: relative;
+        }
+        main{
+          margin: auto;
+          align-items: center;
+        }
+
+
+
+        .links { /* 링크들을 상단 우측에 위치시킵니다. */
+          position: absolute;
+          top: 10;
+          right: 0;
+        }
+        .link_text {
+          font-size: 20px;
+          margin-right: 60px;
+        }
+
+
+</style>
 </head>
 
 <body>
-<div class="container">
-    <div>
-        <table class="table">
+  <header>
+    <div class="links">
+      <a href="/" class="link_text">로그인 </a>
 
-            <thead>
-            <tr>
-                <th>이름</th>
-                <th>종류</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <tr th:each="list : ${lists}">
-                <td th:text="${list.name}"></td>
-                <td th:text="${list.kind}"></td>
-            </tr>
-            </tbody>
-
-        </table>
     </div>
-</div> <!-- /container -->
-</body>
-</html>
+    <a href="/"><p class="sdms-font"><strong>홍제휴</a>
+
+
+  </header>
+
+  <main>
+    <div style="margin-left:30px;font-size=12px;padding:15px;">등록</div>
+
+
+    <div id="grid">
+        <ul>
+          <li>
+            <img src="a.jpg" alt="image" width="160" height="120">
+            <p style="margin-left: 10px;">양지메가1
+            </p>별점<br>   <a href="/">메뉴</a><br>   <a href="/">지도</a><br>
+          </li>
+          <br>
+
+          <li>
+            <img src="a.jpg" alt="image" width="160" height="120">
+            <p style="margin-left: 10px;">양지메가2
+            </p>별점<br>   <a href="/">메뉴</a><br>   <a href="/">지도</a><br>
+          </li>
+          <br>
+
+          <li>
+            <img src="a.jpg" alt="image" width="160" height="120">
+            <p style="margin-left: 10px;">양지메가3
+            </p>별점<br>   <a href="/">메뉴</a><br>   <a href="/">지도</a><br>
+          </li>
+          <br>
+
+        </ul>
+
+    </div>
+
+
+  </main>
+
+
+
+
+  <footer class="footer">
+      <div class="content has-text-centered">
+          <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
+          <p class=footerfont>문의 : acm0209@naver.com</p>
+      </div>
+  </footer>
+
+
+
+  </body>
+  </html>
