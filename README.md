@@ -12,3 +12,5 @@ list of associated with hongik univ
 + db 추가
 
 + 사진을 픽토그램으로 대체
+
++ 라우팅용 홈페이지 제작
