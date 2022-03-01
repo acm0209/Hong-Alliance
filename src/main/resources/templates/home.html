@@ -4,130 +4,229 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hong Alliance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+    <title>Hong Alliance stores</title>
+    <style>
+
+      /* 폰트적용 */
+        @font-face{
+          font-family:'SDMiSaeng';/*미생체*/
+          src:local("SDMiSaeng"),
+          url('SDMiSaeng.eot'),
+          url('SDMiSaeng.woff') format('woff'),
+          url('SDMiSaeng.ttf') format('truetype');
+        }
+
+        .sdms-font{
+          font-family: 'SDMiSaeng',sans-serif;
+          color: 	#FFFFFF;
+          margin-left: 60px;
+          font-size:50px
+        }
+        p{
+          font-size:30px
+        }
+        .footerfont{
+          font-size:10px
+        }
+
+        /*그리드 */
+        #grid{
+          border:4px solid Midnightblue;
+          display:grid;
+          grid-template-colums: 150px 1fr;
+
+        }
+        li{
+          border-top: 2px solid gray;
+        }
+
+
+
+
+        img{ float: left;}
+
+          .p2{ clear: both;}
+
+          /* float된 이미지와 요소의 마진을 주고 싶으면 */
+          /* float된 이미지에 margin을 적용 */
+          img{ margin: 10px;}
+
+
+
+
+
+
+
+
+
+        * {
+          box-sizing: border-box; /* 길이 계산을 편하게 하기위함. box-sizing에 관한 설명은 아래 링크를 참고해주세요 */
+        }
+        body {
+          margin: 0; /* body의 기본마진을 없애줍니다(선택사항) */
+          font-family: sans-serif;
+        }
+        a {
+          text-decoration: none; /* 기본 밑줄을 제거합니다 */
+          color: #888;
+        }
+        a:hover {
+          text-decoration: underline; /* 마우스 커서가 올라갔을 때 밑줄을 생성합니다*/
+        }
+        header {
+          margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
+          height: 80px;
+          display: flex;
+          background: Midnightblue;
+          align-items: center; /* 하위 요소들 수직 가운데정렬 */
+          position: relative;
+        }
+        main{
+          margin: auto;
+          align-items: center;
+        }
+
+
+
+        .links { /* 링크들을 상단 우측에 위치시킵니다. */
+          position: absolute;
+          top: 10;
+          right: 0;
+        }
+        .link_text {
+          font-size: 20px;
+          margin-right: 60px;
+        }
+
+
+</style>
 </head>
 
 <body>
-<div class = "box level is-mobile">
+  <header>
+    <div class="links">
+      <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="kakao_login_medium.png"></a>
 
-    <span class="level-item has-text-centered">
-        <span class="title is-2">  홍제휴 </span>
-    </span>
-    <span class="level-right">
-        <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="/images/kakao_login_medium.png"></a>
-    </span>
-</div>
+    </div>
+    <a href="home.html"><p class="sdms-font"><strong>홍제휴</a>
 
-<div class="level is-mobile box">
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/stores">
-                <span>전체보기</span>
-                <figure class="image is-96x96">
-                    <img class ="is-rounded" th:src ="@{/images/all.jpg}">
-                </figure>
-            </a>
+
+  </header>
+  <br>
+  <main>
+    <div id="grid">
+      <div class="level is-mobile box">
+          <div class="level-item has-text-centered">
+              <div>
+                  <a href="/stores">
+                      <span>전체보기</span>
+                      <figure class="image is-96x96">
+                          <img class ="is-squre" th:src ="@{/images/all.jpg}">
+                      </figure>
+                  </a>
+              </div>
+          </div>
+          <div class="level-item has-text-centered">
+              <div>
+                  <a href="/admin">
+                      <span>즐겨찾기</span>
+                      <figure class="image is-96x96">
+                          <img class ="is-rounded" th:src ="@{/images/favorite.png}">
+                      </figure>
+                  </a>
+              </div>
+          </div>
+          <div class="level-item has-text-centered">
+              <div>
+                  <a href="/admin">
+                      <span>식당</span>
+                      <figure class="image is-96x96">
+                          <img class ="is-squre" th:src ="@{/images/restaurant.jpg}">
+                      </figure>
+                  </a>
+              </div>
+          </div>
+
+      </div>
+
+
+      <div class="level is-mobile box">
+          <div class="level-item has-text-centered">
+              <div>
+                  <a href="/stores/cafe">
+                      <span>카페/디저트</span>
+                      <figure class="image is-96x96">
+                          <img class ="is-squre" th:src ="@{/images/cafe.jpg}">
+                      </figure>
+                  </a>
+              </div>
+          </div>
+          <div class="level-item has-text-centered">
+              <div>
+                  <a href="/admin">
+                      <span>헤어숍</span>
+                      <figure class="image is-96x96">
+                          <img class ="is-squre" th:src ="@{/images/hair.jpg}">
+                      </figure>
+                  </a>
+              </div>
+          </div>
+          <div class="level-item has-text-centered">
+              <div>
+                  <a href="/stores/hospital">
+                      <span>병원</span>
+                      <figure class="image is-96x96">
+                          <img class ="is-squre" th:src ="@{/images/hospital.png}">
+                      </figure>
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <div class="level is-mobile box">
+          <div class="level-item has-text-centered">
+              <div>
+                  <a href="/admin">
+                      <span>플랫폼</span>
+                      <figure class="image is-96x96">
+                          <img class ="is-squre" th:src ="@{/images/cafe.jpg}">
+                      </figure>
+                  </a>
+              </div>
+          </div>
+          <div class="level-item has-text-centered">
+              <div>
+                  <a href="/admin">
+                      <span>기타</span>
+                      <figure class="image is-96x96">
+                          <img class ="is-squre" th:src ="@{/images/cafe.jpg}">
+                      </figure>
+                  </a>
+              </div>
+          </div>
+          <div class="level-item has-text-centered">
+              <div>
+                  <a href="/addform">
+                      <span>업체 추가 요청 폼</span>
+                      <figure class="image is-96x96">
+                          <img class ="is-squre" th:src ="@{/images/tool.jpg}">
+                      </figure>
+                  </a>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
+            <p class=footerfont>문의 : acm0209@naver.com</p>
         </div>
-    </div>
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/admin">
-                <span>즐겨찾기</span>
-                <figure class="image is-96x96">
-                    <img class ="is-rounded" th:src ="@{/images/favorite.png}">
-                </figure>
-            </a>
-        </div>
-    </div>
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/admin">
-                <span>식당</span>
-                <figure class="image is-96x96">
-                    <img class ="is-rounded" th:src ="@{/images/restaurant.jpg}">
-                </figure>
-            </a>
-        </div>
-    </div>
-
-</div>
-
-
-<div class="level is-mobile box">
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/stores/cafe">
-                <span>카페/디저트</span>
-                <figure class="image is-96x96">
-                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
-                </figure>
-            </a>
-        </div>
-    </div>
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/admin">
-                <span>헤어숍</span>
-                <figure class="image is-96x96">
-                    <img class ="is-rounded" th:src ="@{/images/hair.jpg}">
-                </figure>
-            </a>
-        </div>
-    </div>
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/stores/hospital">
-                <span>병원</span>
-                <figure class="image is-96x96">
-                    <img class ="is-rounded" th:src ="@{/images/hospital.png}">
-                </figure>
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="level is-mobile box">
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/admin">
-                <span>플랫폼</span>
-                <figure class="image is-96x96">
-                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
-                </figure>
-            </a>
-        </div>
-    </div>
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/admin">
-                <span>기타</span>
-                <figure class="image is-96x96">
-                    <img class ="is-rounded" th:src ="@{/images/cafe.jpg}">
-                </figure>
-            </a>
-        </div>
-    </div>
-    <div class="level-item has-text-centered">
-        <div>
-            <a href="/addform">
-                <span>업체 추가 요청 폼</span>
-                <figure class="image is-96x96">
-                    <img class ="is-rounded" th:src ="@{/images/tool.jpg}">
-                </figure>
-            </a>
-        </div>
-    </div>
-</div>
-
-<footer class="footer">
-    <div class="content has-text-centered">
-        <p>홍익대학교 제휴목록 정리 프로젝트</p>
-        <p>문의 : acm0209@naver.com</p>
-    </div>
-</footer>
+    </footer>
 
 
 
-</body>
-</html>
+    </body>
+    </html>

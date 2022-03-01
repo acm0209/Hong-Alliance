@@ -1,16 +1,171 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+    <title>Hong Alliance stores</title>
+    <style>
+
+      /* 폰트적용 */
+        @font-face{
+          font-family:'SDMiSaeng';/*미생체*/
+          src:local("SDMiSaeng"),
+          url('SDMiSaeng.eot'),
+          url('SDMiSaeng.woff') format('woff'),
+          url('SDMiSaeng.ttf') format('truetype');
+        }
+
+        .sdms-font{
+          font-family: 'SDMiSaeng',sans-serif;
+          color: 	#FFFFFF;
+          margin-left: 60px;
+          font-size:50px
+        }
+        p{
+          font-size:30px
+        }
+        .footerfont{
+          font-size:10px
+        }
+
+        /*그리드 */
+        #grid{
+          border:4px solid Midnightblue;
+          display:grid;
+          grid-template-colums: 150px 1fr;
+
+        }
+        li{
+          border-top: 2px solid gray;
+        }
+
+
+
+
+        img{ float: left;}
+
+          .p2{ clear: both;}
+
+          /* float된 이미지와 요소의 마진을 주고 싶으면 */
+          /* float된 이미지에 margin을 적용 */
+          img{ margin: 10px;}
+
+
+
+
+
+
+
+
+
+        * {
+          box-sizing: border-box; /* 길이 계산을 편하게 하기위함. box-sizing에 관한 설명은 아래 링크를 참고해주세요 */
+        }
+        body {
+          margin: 0; /* body의 기본마진을 없애줍니다(선택사항) */
+          font-family: sans-serif;
+        }
+        a {
+          text-decoration: none; /* 기본 밑줄을 제거합니다 */
+          color: #888;
+        }
+        a:hover {
+          text-decoration: underline; /* 마우스 커서가 올라갔을 때 밑줄을 생성합니다*/
+        }
+        header {
+          margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
+          height: 80px;
+          display: flex;
+          background: Midnightblue;
+          align-items: center; /* 하위 요소들 수직 가운데정렬 */
+          position: relative;
+        }
+        main{
+          margin: auto;
+          align-items: center;
+        }
+
+
+
+        .links { /* 링크들을 상단 우측에 위치시킵니다. */
+          position: absolute;
+          top: 10;
+          right: 0;
+        }
+        .link_text {
+          font-size: 20px;
+          margin-right: 60px;
+        }
+</style>
+</head>
+
 <body>
-<div class="container">
-    <form action="/addform" method="post">
-        <div class="form-group">
-            <label for="name">이름</label>
-            <input type="text" id="name" name="name" placeholder="이름을입력하세요">
-            <input type="text" id="kind" name="kind" placeholder="종류">
-            <input type="text" id="info" name="info" placeholder="info">
+  <header>
+    <div class="links">
+      <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="kakao_login_medium.png"></a>
+
+    </div>
+    <a href="home.html"><p class="sdms-font"><strong>홍제휴</a>
+
+
+  </header>
+
+  <br>
+  <main>
+    <div id="grid">
+      <form class="box">
+        <div class="field">
+          <label class="label">업체이름</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="">
+          </div>
         </div>
-        <button type="submit">등록</button>
-    </form>
-</div> <!-- /container -->
-</body>
-</html>
+
+        <div class="field">
+          <label class="label">가게이름</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">제휴내용</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="e.g. 홍대생 인증시 15% 할인">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">위치</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="대략적인 위치">
+          </div>
+        </div>
+        <button class="button is-dark">제출</button>
+      </form>
+    </div>
+
+
+
+
+
+
+  </main>
+
+
+
+
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
+            <p class=footerfont>문의 : acm0209@naver.com</p>
+        </div>
+    </footer>
+
+
+
+    </body>
+    </html>
