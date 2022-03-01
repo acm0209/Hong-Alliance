@@ -30,4 +30,9 @@ public class HomeController {
         return "naver_map";
     }
 
+    @GetMapping("/all")
+    public String all(){
+        return "all";
+    }
+
 }
