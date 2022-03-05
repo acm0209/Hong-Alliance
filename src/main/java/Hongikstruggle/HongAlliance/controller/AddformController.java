@@ -26,7 +26,7 @@ public class AddformController {
 
         JdbcConnection.PostNewStore(form);
 
-        return "/addform";
+        return "addform";
     }
 
 

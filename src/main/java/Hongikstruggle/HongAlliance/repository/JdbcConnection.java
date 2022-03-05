@@ -83,6 +83,7 @@ public class JdbcConnection {
                 Store store = new Store();
                 store.setId(rs.getInt("sid"));
                 store.setName(rs.getString("sname"));
+                store.setInfo(rs.getString("info"));
                 store.setKind(event);
                 list.add(store);
             }
@@ -107,6 +108,7 @@ public class JdbcConnection {
             store.setId(rs.getInt("sid"));
             store.setName(rs.getString("sname"));
             store.setKind(rs.getString("kind"));
+            store.setInfo(rs.getString("info"));
         }catch(Exception e){
             System.out.println("selection 오류 발생!");
             System.out.println(e);
