@@ -20,7 +20,7 @@
         .sdms-font{
           font-family: 'SDMiSaeng',sans-serif;
           color: 	#FFFFFF;
-          margin-left: 60px;
+          margin-left: 40px;
           font-size:50px
         }
         p{
@@ -105,26 +105,28 @@
 </head>
 
 <body>
-  <header>
+<header>
     <div class="links">
-      <a href="/" class="link_text">로그인 </a>
+        <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="images/kakao_login_medium.png"></a>
 
     </div>
-    <a href="/"><p class="sdms-font"><strong>홍제휴</a>
+    <a href="/" style="color:white;"><p class="sdms-font"><strong>홍제휴</a>
 
 
-  </header>
+</header>
 
   <main>
 
 
     <div id="grid">
         <li tr th:each="list : ${lists}">
+            <a href="/">
             <img src="/" alt="image" width="96" height="96">
             <br>
             <div style="margin-left: 10px;"><td th:text="${list.name}"></td></div>
             <div style="margin-left: 10px;"><td th:text="${list.kind}"></td></div>
             <div style="margin-left: 10px;"><td th:text="${list.info}"></td></div>
+            </a>
         </li>
 
 
@@ -141,6 +143,8 @@
       <div class="content has-text-centered">
           <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
           <p class=footerfont>문의 : acm0209@naver.com</p>
+          <p class=footerfont >COPYRIGHT © pictogram designed by https://icons8.com/icons   </p>
+          <p class= footerfont >font designed by 윤태호,산돌</td></p>
       </div>
   </footer>
 
