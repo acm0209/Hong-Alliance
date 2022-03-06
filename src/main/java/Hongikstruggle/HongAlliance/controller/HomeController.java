@@ -30,7 +30,7 @@ public class HomeController {
         return "naver_map";
     }
 
-    @GetMapping("newone")
+    @GetMapping("/newone")
     public String newone(){
         return "newone";
     }

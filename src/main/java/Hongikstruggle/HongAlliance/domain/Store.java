@@ -8,7 +8,7 @@ public class Store {
 
     private static String CLIENTID;
 
-    @Value("${ncloud.map.client-id}")
+    @Value("mqmj50lnne")
     public void setCLIENTID(String clientid) {
         CLIENTID = clientid;
     }
