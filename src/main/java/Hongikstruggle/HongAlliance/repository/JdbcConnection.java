@@ -39,7 +39,7 @@ public class JdbcConnection {
             return DriverManager.getConnection(URL,USERNAME,PASSWORD);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("db에 연결할 수 없습니다.");
+            System.out.println("db에 연결할 수 없습니다..");
         }
         return null;
     }
