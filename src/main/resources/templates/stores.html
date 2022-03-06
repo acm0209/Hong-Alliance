@@ -4,9 +4,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hong Alliance stores</title>
-    <style>
+</head>
+
+<style>
 
       /* 폰트적용 */
         @font-face{
@@ -20,7 +23,7 @@
         .sdms-font{
           font-family: 'SDMiSaeng',sans-serif;
           color: 	#FFFFFF;
-          margin-left: 60px;
+          margin-left: 40px;
           font-size:50px
         }
         p{
@@ -32,7 +35,7 @@
 
         /*그리드 */
         #grid{
-          border:4px solid Midnightblue;
+          border-bottom:0px solid Midnightblue;
           display:grid;
           grid-template-colums: 150px 1fr;
 
@@ -72,9 +75,7 @@
           text-decoration: none; /* 기본 밑줄을 제거합니다 */
           color: #888;
         }
-        a:hover {
-          text-decoration: underline; /* 마우스 커서가 올라갔을 때 밑줄을 생성합니다*/
-        }
+
         header {
           margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
           height: 80px;
@@ -105,46 +106,39 @@
 </head>
 
 <body>
-  <header>
+<header>
     <div class="links">
-      <a href="/" class="link_text">로그인 </a>
+        <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="images/kakao_login_medium.png"></a>
 
     </div>
-    <a href="/"><p class="sdms-font"><strong>홍제휴</a>
+    <a href="/" style="color:white;"><p class="sdms-font"><strong>홍제휴</a>
 
 
-  </header>
-
-  <main>
+</header>
+<main>
 
 
     <div id="grid">
-        <li tr th:each="list : ${lists}">
-            <img src="/" alt="image" width="96" height="96">
-            <br>
-            <div style="margin-left: 10px;"><td th:text="${list.name}"></td></div>
-            <div style="margin-left: 10px;"><td th:text="${list.kind}"></td></div>
-            <div style="margin-left: 10px;"><td th:text="${list.info}"></td></div>
-        </li>
-
-
+        <a href="/">
+            <li tr th:each="list : ${lists}">
+                <img src="/" alt="image" width="96" height="96">
+                <br>
+                <div style="margin-left: 10px;"><td th:text="${list.name}"></td></div>
+                <div style="margin-left: 10px;"><td th:text="${list.kind}"></td></div>
+                <div style="margin-left: 10px;"><td th:text="${list.info}"></td></div>
+            </li>
+        </a>
     </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
+            <p class=footerfont>문의 : acm0209@naver.com</p>
+            <p class=footerfont >COPYRIGHT © pictogram designed by https://icons8.com/icons   </p>
+            <p class= footerfont >font designed by 윤태호,산돌</td></p>
+        </div>
+    </footer>
 
 
-
-  </main>
-
-
-
-
-  <footer class="footer">
-      <div class="content has-text-centered">
-          <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
-          <p class=footerfont>문의 : acm0209@naver.com</p>
-      </div>
-  </footer>
-
-
-
-  </body>
-  </html>
+    </div> <!-- /container -->
+</body>
+</html>

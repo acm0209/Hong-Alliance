@@ -1,12 +1,10 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
-    <title>Hong Alliance stores</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+  <title>Hong Alliance stores</title>
+  <style>
 
       /* 폰트적용 */
         @font-face{
@@ -20,7 +18,7 @@
         .sdms-font{
           font-family: 'SDMiSaeng',sans-serif;
           color: 	#FFFFFF;
-          margin-left: 60px;
+          margin-left: 40px;
           font-size:50px
         }
         p{
@@ -102,69 +100,72 @@
 </head>
 
 <body>
-  <header>
-    <div class="links">
-      <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="/images/kakao_login_medium.png"></a>
+<header>
+  <div class="links">
+    <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="images/kakao_login_medium.png"></a>
 
-    </div>
-    <a href="/"><p class="sdms-font"><strong>홍제휴</a>
+  </div>
+  <a href="/" style="color:white;"><p class="sdms-font"><strong>홍제휴</a>
 
 
-  </header>
+</header>
 
-  <main>
-    <div id="grid">
-      <form action="/addform" method="post" class="box">
-        <div class="field">
-          <label class="label">업체이름</label>
-          <div class="control">
-            <input class="input" type="text" name="name" placeholder="">
-          </div>
+
+<main>
+  <div id="grid">
+    <form action="/addform" method="post" class="box">
+      <div class="field">
+        <label class="label">업체이름</label>
+        <div class="control">
+          <input class="input" type="text" name="name" placeholder="">
         </div>
+      </div>
 
-        <div class="field">
-          <label class="label">종류</label>
-          <div class="control">
-            <input class="input" type="text" name="kind" placeholder="">
-          </div>
+      <div class="field">
+        <label class="label">종류</label>
+        <div class="control">
+          <input class="input" type="text" name="kind" placeholder="">
         </div>
+      </div>
 
-        <div class="field">
-          <label class="label">제휴내용</label>
-          <div class="control">
-            <input class="input" name = "info" type="text" placeholder="e.g. 홍대생 인증시 15% 할인">
-          </div>
+      <div class="field">
+        <label class="label">제휴내용</label>
+        <div class="control">
+          <input class="input" name = "info" type="text" placeholder="e.g. 홍대생 인증시 15% 할인">
         </div>
+      </div>
 
-        <div class="field">
-          <label class="label">위치</label>
-          <div class="control">
-            <input class="input" name="position" type="text" placeholder="대략적인 위치">
-          </div>
+      <div class="field">
+        <label class="label">위치</label>
+        <div class="control">
+          <input class="input" name="position" type="text" placeholder="대략적인 위치">
         </div>
-        <button class="button is-dark">제출</button>
-      </form>
-    </div>
+      </div>
+      <button class="button is-dark">제출</button>
+    </form>
+  </div>
 
 
 
 
 
 
-  </main>
+</main>
 
 
 
 
 
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
-            <p class=footerfont>문의 : acm0209@naver.com</p>
-        </div>
-    </footer>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
+    <p class=footerfont>문의 : acm0209@naver.com</p>
+    <p class=footerfont >COPYRIGHT © pictogram designed by https://icons8.com/icons   </p>
+    <p class= footerfont >font designed by 윤태호,산돌</td></p>
+  </div>
+</footer>
 
 
 
-    </body>
-    </html>
+</body>
+</html>
