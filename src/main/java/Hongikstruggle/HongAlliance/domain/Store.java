@@ -23,6 +23,23 @@ public class Store {
     private double lat;
     private double lng;
     private String info; //할인 정보
+    private String picture;
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
+    public double getLng() {
+        return lng;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
+    }
 
     public String getInfo() {
         return info;
@@ -61,11 +78,4 @@ public class Store {
         this.lat = lat;
     }
 
-    public double getLon() {
-        return lng;
-    }
-
-    public void setLon(double lng) {
-        this.lng = lng;
-    }
 }

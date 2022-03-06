@@ -61,6 +61,9 @@ public class JdbcConnection {
                 store.setName(rs.getString("sname"));
                 store.setKind(rs.getString("kind"));
                 store.setInfo(rs.getString("info"));
+                store.setPicture(rs.getString("picture"));
+                store.setLat(rs.getDouble("lat"));
+                store.setLng(rs.getDouble("lng"));
                 list.add(store);
             }
             System.out.println("selection 정상 작동!");
@@ -84,6 +87,9 @@ public class JdbcConnection {
                 store.setId(rs.getInt("sid"));
                 store.setName(rs.getString("sname"));
                 store.setInfo(rs.getString("info"));
+                store.setPicture(rs.getString("picture"));
+                store.setLat(rs.getDouble("lat"));
+                store.setLng(rs.getDouble("lng"));
                 store.setKind(event);
                 list.add(store);
             }
@@ -109,6 +115,9 @@ public class JdbcConnection {
             store.setName(rs.getString("sname"));
             store.setKind(rs.getString("kind"));
             store.setInfo(rs.getString("info"));
+            store.setPicture(rs.getString("picture"));
+            store.setLat(rs.getDouble("lat"));
+            store.setLng(rs.getDouble("lng"));
         }catch(Exception e){
             System.out.println("selection 오류 발생!");
             System.out.println(e);

@@ -12,10 +12,7 @@
       /* 폰트적용 */
         @font-face{
           font-family:'SDMiSaeng';/*미생체*/
-          src:local("SDMiSaeng"),
-          url('SDMiSaeng.eot'),
-          url('SDMiSaeng.woff') format('woff'),
-          url('SDMiSaeng.ttf') format('truetype');
+           src:url('/SDMiSaeng.ttf') format('truetype');
         }
 
         .sdms-font{
@@ -33,13 +30,13 @@
 
         /*그리드 */
         #grid{
-          border-bottom:4px solid Midnightblue;
+          border-top:4px solid Midnightblue;
           display:grid;
           grid-template-colums: 150px 1fr;
 
         }
         li{
-          border-bottom: 2px solid gray;
+          border-bottom: 0px solid gray;
           list-style:none;
         }
 
@@ -71,11 +68,9 @@
         }
         a {
           text-decoration: none; /* 기본 밑줄을 제거합니다 */
-          color: #888;
+          color: #000;
         }
-        a:hover {
-          text-decoration: underline; /* 마우스 커서가 올라갔을 때 밑줄을 생성합니다*/
-        }
+
         header {
           margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
           height: 80px;
@@ -108,7 +103,7 @@
 <body>
   <header>
     <div class="links">
-      <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="images/kakao_login_medium.png"></a>
+      <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="/images/kakao_login_medium.png"></a>
 
     </div>
       <a href="/" style="color:white;"><p class="sdms-font"><strong>홍제휴</strong></a>
@@ -117,36 +112,43 @@
   <main>
 
 
-    <div id="grid">
-        <li>
-            <img src="gonghue.jpg" alt="image" width="96" height="96">
-            <br>
-            <div style="margin-left: 8px;"><strong>이름 : 카페 공휴 </strong></div>
-            <div style="margin-left: 8px;">종류 : 카페</td></div>
-            <div style="margin-left: 8px;">정보 : 홍익대 학생 전 메뉴 10% 할인</td></div>
-        </li>
+      <div id="grid">
+          <li tr th:each="list : ${lists}">
+                  <img src="/images/store/" th:attrappend="src=${list.picture}" alt="image" style="width:96px; height:96px;">
+                  <br>
+              <strong>
+                  <div style="margin-left: 10px;"><td th:text="${list.name}"></td></div>
+                  <div style="margin-left: 10px;"><td th:text="${list.kind}"></td></div>
+                  <div style="margin-left: 10px;"><td th:text="${list.info}"></td></div></strong>
 
 
-        <div id="map" style="width:100%;height:300px;"></div>
-        <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mqmj50lnne"></script>
-        <script>
 
-        var cityhall = new naver.maps.LatLng(37.548538, 126.923243),
+
+              <div id="map" style="width:100%;height:300px;"></div>
+              <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mqmj50lnne"></script>
+              <script th:inline="javascript" >
+
+              let lat = [[${list.lat}]];
+              let lng = [[${list.lng}]];
+              var name = "[(${list.name})]";
+
+
+        var store = new naver.maps.LatLng(lat, lng),
             map = new naver.maps.Map('map', {
-                center: cityhall.destinationPoint(0, 500),
+                center: store.destinationPoint(0, 0),
                 zoom: 15
             }),
             marker = new naver.maps.Marker({
                 map: map,
-                position: cityhall
+                position: store
             });
 
 
         var contentString = [
             '<div class="iw_inner">',
-            '   <p>서울특별시 마포구 와우산로 48 1층<br />',
-            '       <a href="https://gonghue.modoo.at/" target="_blank">상세정보/</a>',
-            '   </p>',
+            '   <h3><strong>',
+             name,
+            '  </strong> </h3>',
             '</div>'
         ].join('');
 
@@ -169,7 +171,19 @@
 
 
 
-    </div>
+      </div>
+
+
+
+
+
+          </li>
+
+
+      </div>
+
+
+
 
 
 
@@ -182,10 +196,10 @@
       <div class="content has-text-centered">
           <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
           <p class=footerfont>문의 : acm0209@naver.com</p>
-          <p class=footerfont>COPYRIGHT © all rights reserved</p>
+          <p class=footerfont >COPYRIGHT © pictogram designed by https://icons8.com/icons   </p>
+          <p class= footerfont >font designed by 윤태호,산돌</td></p>
       </div>
   </footer>
-
 
 
   </body>

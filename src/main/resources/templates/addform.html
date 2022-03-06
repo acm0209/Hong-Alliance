@@ -1,5 +1,5 @@
-
-
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
 <head>
@@ -69,11 +69,9 @@
         }
         a {
           text-decoration: none; /* 기본 밑줄을 제거합니다 */
-          color: #888;
+
         }
-        a:hover {
-          text-decoration: underline; /* 마우스 커서가 올라갔을 때 밑줄을 생성합니다*/
-        }
+
         header {
           margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
           height: 80px;
@@ -103,48 +101,47 @@
 
 <body>
 <header>
-  <div class="links">
-    <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="images/kakao_login_medium.png"></a>
+    <div class="links">
+        <a href="https://kauth.kakao.com/oauth/authorize?client_id=f161b26bc81b3ecb454ad26195426efc&redirect_uri=http://localhost:8080/test&response_type=code"><img src="/images/kakao_login_medium.png"></a>
 
-  </div>
-  <a href="/" style="color:white;"><p class="sdms-font"><strong>홍제휴</a>
+    </div>
+    <a href="/" style="color:white;"><p class="sdms-font"><strong>홍제휴</strong></a>
 
 
 </header>
 
-
-  <main>
+<main>
     <div id="grid">
-      <form action="/addform" method="post" class="box">
-        <div class="field">
-          <label class="label">업체이름</label>
-          <div class="control">
-            <input class="input" type="text" name="name" placeholder="">
-          </div>
-        </div>
+        <form action="/addform" method="post" class="box">
+            <div class="field">
+                <label class="label">업체이름</label>
+                <div class="control">
+                    <input class="input" type="text" name="name" placeholder="">
+                </div>
+            </div>
 
-        <div class="field">
-          <label class="label">종류</label>
-          <div class="control">
-            <input class="input" type="text" name="kind" placeholder="">
-          </div>
-        </div>
+            <div class="field">
+                <label class="label">종류</label>
+                <div class="control">
+                    <input class="input" type="text" name="kind" placeholder="">
+                </div>
+            </div>
 
-        <div class="field">
-          <label class="label">제휴내용</label>
-          <div class="control">
-            <input class="input" name = "info" type="text" placeholder="e.g. 홍대생 인증시 15% 할인">
-          </div>
-        </div>
+            <div class="field">
+                <label class="label">제휴내용</label>
+                <div class="control">
+                    <input class="input" name = "info" type="text" placeholder="e.g. 홍대생 인증시 15% 할인">
+                </div>
+            </div>
 
-        <div class="field">
-          <label class="label">위치</label>
-          <div class="control">
-            <input class="input" name="position" type="text" placeholder="대략적인 위치">
-          </div>
-        </div>
-        <button class="button is-dark">제출</button>
-      </form>
+            <div class="field">
+                <label class="label">위치</label>
+                <div class="control">
+                    <input class="input" name="position" type="text" placeholder="대략적인 위치">
+                </div>
+            </div>
+            <button class="button is-dark">제출</button>
+        </form>
     </div>
 
 
@@ -152,22 +149,22 @@
 
 
 
-  </main>
+</main>
 
 
 
 
 
-  <footer class="footer">
-      <div class="content has-text-centered">
-          <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
-          <p class=footerfont>문의 : acm0209@naver.com</p>
-          <p class=footerfont >COPYRIGHT © pictogram designed by https://icons8.com/icons   </p>
-          <p class= footerfont >font designed by 윤태호,산돌</td></p>
-      </div>
-  </footer>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
+        <p class=footerfont>문의 : acm0209@naver.com</p>
+        <p class=footerfont >COPYRIGHT © pictogram designed by https://icons8.com/icons   </p>
+        <p class= footerfont >font designed by 윤태호,산돌</td></p>
+    </div>
+</footer>
 
 
 
-    </body>
-    </html>
+</body>
+</html>

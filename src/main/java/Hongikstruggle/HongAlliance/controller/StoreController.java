@@ -37,13 +37,18 @@ public class StoreController {
     @GetMapping("/stores/{event}")
     public String storesCafe(@PathVariable String event, Model model){
 
-
-        List<Store> lists = JdbcConnection.findByEvent(event);
-
-        model.addAttribute("lists", lists);
-
-
-        return "stores";
+        boolean isnumber = event.matches("[0-9]+");
+        System.out.println(isnumber);
+        if(!isnumber) {
+            List<Store> lists = JdbcConnection.findByEvent(event);
+            model.addAttribute("lists", lists);
+            return "stores";
+        }
+        else{
+            Store store = JdbcConnection.findById(event);
+            model.addAttribute("lists", store);
+            return "store";
+        }
     }
 
 
