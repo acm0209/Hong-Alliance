@@ -115,30 +115,43 @@
 
 
 </header>
-<main>
+
+
+
+  <main>
 
 
     <div id="grid">
-        <a href="/">
-            <li tr th:each="list : ${lists}">
-                <img src="/" alt="image" width="96" height="96">
-                <br>
-                <div style="margin-left: 10px;"><td th:text="${list.name}"></td></div>
-                <div style="margin-left: 10px;"><td th:text="${list.kind}"></td></div>
-                <div style="margin-left: 10px;"><td th:text="${list.info}"></td></div>
-            </li>
-        </a>
+        <li tr th:each="list : ${lists}">
+            <a href="/">
+            <img src="/" alt="image" width="96" height="96">
+            <br>
+            <div style="margin-left: 10px;"><td th:text="${list.name}"></td></div>
+            <div style="margin-left: 10px;"><td th:text="${list.kind}"></td></div>
+            <div style="margin-left: 10px;"><td th:text="${list.info}"></td></div>
+            </a>
+        </li>
+
+
     </div>
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
-            <p class=footerfont>문의 : acm0209@naver.com</p>
-            <p class=footerfont >COPYRIGHT © pictogram designed by https://icons8.com/icons   </p>
-            <p class= footerfont >font designed by 윤태호,산돌</td></p>
-        </div>
-    </footer>
 
 
-    </div> <!-- /container -->
-</body>
-</html>
+
+  </main>
+
+
+
+
+  <footer class="footer">
+      <div class="content has-text-centered">
+          <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
+          <p class=footerfont>문의 : acm0209@naver.com</p>
+          <p class=footerfont >COPYRIGHT © pictogram designed by https://icons8.com/icons   </p>
+          <p class= footerfont >font designed by 윤태호,산돌</td></p>
+      </div>
+  </footer>
+
+
+
+  </body>
+  </html>
