@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
 <head>
@@ -136,7 +136,9 @@
                     <input class="input" name="position" type="text" placeholder="대략적인 위치">
                 </div>
             </div>
-            <button class="button is-dark">제출</button>
+            <button th:if="${session.ssVar != 0}" class="button is-dark">제출</button>
+            <div th:if="${session.ssVar != 0}">제출 가능 횟수 : <span th:text="${session.ssVar}"></span></div>
+            <span th:if="${session.ssVar == 0}">더 많은 제출을 원하시면 acm0209@naver.com 으로 주시기 바랍니다. </span>
         </form>
     </div>
 
