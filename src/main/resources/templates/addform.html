@@ -111,7 +111,7 @@
 
 <body>
 <header>
-    <a href="/" style="color:white;"><p class="sdms-font"><strong>홍제휴</strong></a>
+    <a href="/" style="color:white;"><p class="sdms-font"><strong>홍익대 제휴 목록</strong></a>
 
 
 </header>
@@ -122,7 +122,7 @@
             <div class="field">
                 <label class="label">업체이름</label>
                 <div class="control">
-                    <input class="input" type="text" name="name" placeholder="">
+                    <input class="input" type="text" name="name" placeholder="" required>
                 </div>
             </div>
 
@@ -146,9 +146,9 @@
                     <input class="input" name="position" type="text" placeholder="대략적인 위치">
                 </div>
             </div>
-            <button th:if="${session.ssVar != 0}" class="button is-dark">제출</button>
-            <div th:if="${session.ssVar != 0}">제출 가능 횟수 : <span th:text="${session.ssVar}"></span></div>
-            <span th:if="${session.ssVar == 0}">더 많은 제출을 원하시면 acm0209@naver.com 으로 주시기 바랍니다. </span>
+            <button th:if="${session.ssVar > 0}" class="button is-dark">제출</button>
+            <div th:if="${session.ssVar > 0}">제출 가능 횟수 : <span th:text="${session.ssVar}"></span></div>
+            <span th:if="${session.ssVar <= 0}">더 많은 제출을 원하시면 hongjeroot@gmail.com 으로 주시기 바랍니다. </span>
         </form>
     </div>
 
@@ -166,7 +166,7 @@
 <footer class="footer">
     <div class="content has-text-centered">
         <p class=footerfont>홍익대학교 제휴목록 정리 프로젝트</p>
-        <p class=footerfont>문의 : acm0209@naver.com</p>
+        <p class=footerfont>문의 : hongjeroot@gmail.com</p>
         <p class=footerfont >COPYRIGHT © pictogram designed by https://icons8.com/icons   </p>
         <p class= footerfont >font designed by 윤태호,산돌</td></p>
     </div>
