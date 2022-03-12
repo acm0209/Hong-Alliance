@@ -9,16 +9,19 @@
     <style>
 
       /* 폰트적용 */
-        @font-face{
+         @font-face{
           font-family:'SDMiSaeng';/*미생체*/
             src:url('/SDMiSaeng.ttf') format('truetype');
         }
 
-        .sdms-font{
+  .sdms-font{
           font-family: 'SDMiSaeng',sans-serif;
-          color: 	#FFFFFF;
-          margin-left: 40px;
-          font-size:50px
+          color:    #FFFFFF;
+
+          font-size:50px;
+          margin-left:auto;
+          margin-right:auto;
+          text-align:center;
         }
         p{
           font-size:30px
@@ -29,7 +32,7 @@
 
         /*그리드 */
         #grid{
-          border-bottom:2px solid gray;
+          border-bottom:0px solid Midnightblue;
           display:grid;
           grid-template-colums: 150px 1fr;
 
@@ -67,16 +70,19 @@
         }
         a {
           text-decoration: none; /* 기본 밑줄을 제거합니다 */
-          color: #000;
+
         }
 
         header {
           margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
           height: 80px;
           display: flex;
-          background: Midnightblue;
+          background:Midnightblue;
           align-items: center; /* 하위 요소들 수직 가운데정렬 */
           position: relative;
+          text-align: center;
+          flex-direction: column;
+
         }
         main{
           margin: auto;
@@ -94,8 +100,6 @@
           font-size: 20px;
           margin-right: 60px;
         }
-
-
 </style>
 
 
@@ -112,12 +116,10 @@
 
 <body>
 <header>
-    <a href="/" style="color:white;"><p class="sdms-font"><strong>홍익대 제휴 목록</strong></a>
-
-
+    <a href="/" style="color:white;"><p class="sdms-font"><strong>홍익대 제휴 업체 목록</strong></a>
 </header>
 
-  <main>
+    <main>
 
 
     <div id="grid">
