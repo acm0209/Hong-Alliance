@@ -23,7 +23,7 @@ public class HomeController {
     @Autowired
     private HttpSession session;
 
-
+    
     @GetMapping("/")
     public String Home() {
         return "home";
